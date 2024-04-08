@@ -1,0 +1,4 @@
+tcp:
+  server:
+    port: 12345
+    timeout: 10000
