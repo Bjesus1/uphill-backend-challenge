@@ -10,15 +10,29 @@ import org.springframework.integration.ip.tcp.connection.AbstractServerConnectio
 import org.springframework.integration.ip.tcp.connection.TcpNioServerConnectionFactory;
 import org.springframework.messaging.MessageChannel;
 
+/**
+ * The tcp server configuration
+ */
 @Configuration
 public class TcpServerConfig {
 
+    /**
+     * The server port.
+     */
     @Value("${tcp.server.port}")
     private int tcpServerPort;
 
+    /**
+     * The server connection timeout.
+     */
     @Value("${tcp.server.timeout}")
     private int tcpServerTimeout;
 
+    /**
+     * Configures the server connection factory for tcp connections.
+     *
+     * @return the server connection factory.
+     */
     @Bean
     public AbstractServerConnectionFactory serverConnectionFactory() {
         TcpNioServerConnectionFactory serverConnectionFactory = new TcpNioServerConnectionFactory(tcpServerPort);
@@ -27,11 +41,23 @@ public class TcpServerConfig {
         return serverConnectionFactory;
     }
 
+    /**
+     * The inbound channel.
+     *
+     * @return a new <class>DirectChannel</class> instance.
+     */
     @Bean
     public MessageChannel inboundChannel() {
         return new DirectChannel();
     }
 
+    /**
+     * The tcp inbound configuration.
+     *
+     * @param serverConnectionFactory the server connection factory.
+     * @param inboundChannel          the inbound channel to consume received input.
+     * @return a new <class>TcpInboundGateway</class> instance.
+     */
     @Bean
     public TcpInboundGateway inboundGateway(AbstractServerConnectionFactory serverConnectionFactory,
                                             @Qualifier("inboundChannel") MessageChannel inboundChannel) {
