@@ -1,6 +1,6 @@
 package com.backend.challenge.event;
 
-import com.backend.challenge.ConnectionsManager;
+import com.backend.challenge.manager.ConnectionsManager;
 import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.integration.ip.tcp.connection.TcpConnection;

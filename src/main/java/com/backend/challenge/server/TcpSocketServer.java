@@ -7,8 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * Bootstrapper class for the tcp server.
  */
-@SpringBootApplication
-@ComponentScan("com")
+@SpringBootApplication(scanBasePackages = "com")
 public class TcpSocketServer {
 
     /**

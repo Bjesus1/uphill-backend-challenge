@@ -1,4 +1,4 @@
-package com.backend.challenge;
+package com.backend.challenge.manager;
 
 import com.backend.challenge.domain.connection.UserConnection;
 import lombok.Getter;
@@ -62,7 +62,7 @@ public class ConnectionsManager {
      * @param name         the new name value.
      */
     public void updateUserConnectionName(String connectionId, String name) {
-        activeConnections.get(connectionId).setName(name);
+        activeConnections.getOrDefault(connectionId, UserConnection.builder().build()).setName(name);
     }
 
     /**

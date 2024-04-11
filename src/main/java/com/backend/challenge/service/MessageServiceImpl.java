@@ -1,7 +1,7 @@
 package com.backend.challenge.service;
 
 
-import com.backend.challenge.ConnectionsManager;
+import com.backend.challenge.manager.ConnectionsManager;
 import com.backend.challenge.domain.graph.DirectGraph;
 import com.backend.challenge.domain.graph.Node;
 import lombok.AllArgsConstructor;

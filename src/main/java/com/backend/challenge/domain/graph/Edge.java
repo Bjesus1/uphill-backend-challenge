@@ -2,7 +2,10 @@ package com.backend.challenge.domain.graph;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+
+import java.util.Objects;
 
 /**
  * Edge representation.

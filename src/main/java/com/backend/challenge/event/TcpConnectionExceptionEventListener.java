@@ -1,11 +1,13 @@
 package com.backend.challenge.event;
 
-import com.backend.challenge.ConnectionsManager;
+import com.backend.challenge.manager.ConnectionsManager;
 import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.integration.ip.tcp.connection.TcpConnection;
 import org.springframework.integration.ip.tcp.connection.TcpConnectionExceptionEvent;
 import org.springframework.stereotype.Component;
+
+import java.net.SocketTimeoutException;
 
 /**
  * A custom listener for the <class>TcpConnectionExceptionEvent</class>.
@@ -26,9 +28,11 @@ public class TcpConnectionExceptionEventListener implements ApplicationListener<
      */
     @Override
     public void onApplicationEvent(TcpConnectionExceptionEvent event) {
-        connectionsManager.closeConnection(
-                ((TcpConnection) event.getSource()).getConnectionId()
-        );
+        if (event.getCause() instanceof SocketTimeoutException) {
+            connectionsManager.closeConnection(
+                    ((TcpConnection) event.getSource()).getConnectionId()
+            );
+        }
     }
 
 }
