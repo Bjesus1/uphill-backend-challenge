@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Main-Class: com.backend.challenge.server.TcpSocketServer
+Class-Path: logback-classic-1.4.14.jar spring-boot-autoconfigure-3.2.2.j
+ ar spring-beans-6.1.5.jar micrometer-commons-1.12.4.jar spring-aop-6.1.
+ 5.jar spring-context-6.1.5.jar snakeyaml-2.2.jar log4j-to-slf4j-2.21.1.
+ jar spring-core-6.1.3.jar reactive-streams-1.0.4.jar reactor-core-3.6.4
+ .jar spring-integration-core-6.2.3.jar log4j-api-2.21.1.jar spring-inte
+ gration-ip-6.2.3.jar spring-boot-starter-3.2.2.jar jul-to-slf4j-2.0.11.
+ jar slf4j-api-2.0.12.jar jakarta.annotation-api-2.1.1.jar spring-tx-6.1
+ .5.jar spring-boot-starter-logging-3.2.2.jar logback-core-1.4.14.jar sp
+ ring-boot-3.2.2.jar micrometer-observation-1.12.4.jar spring-jcl-6.1.3.
+ jar spring-expression-6.1.5.jar spring-messaging-6.1.5.jar spring-retry
+ -2.0.5.jar
+
